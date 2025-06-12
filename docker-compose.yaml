@@ -74,21 +74,21 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-      # --- THIS IS THE FIX ---
-      # This 'args' block passes the variables set in the Coolify UI
-      # to the Docker build process for the frontend service.
+      # THIS SECTION IS NOW CORRECT
       args:
         - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
         - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
-        - NEXTAUTH_URL=${NEXTAUTH_URL}
+        # THIS IS THE KEY VARIABLE YOUR BUILD IS MISSING
+        - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
     ports:
       - "3000:3000"
-    # NOTE: .env.local volume is removed. Coolify injects secrets from the UI.
     environment:
       - NODE_ENV=production
+      - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL} # Also needed at runtime
     command: ["npm", "run", "start"]
     depends_on:
       - backend
+
 
 volumes:
   redis_data:
