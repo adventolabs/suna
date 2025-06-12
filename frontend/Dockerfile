@@ -26,17 +26,21 @@ COPY . .
 
 ENV NEXT_PUBLIC_VERCEL_ENV production
 
-# ---- THIS IS THE FIX. THESE LINES ARE NOT OPTIONAL. ----
+# (previous lines)
+
 # Accept the build arguments from Coolify/Docker Compose
 ARG NEXT_PUBLIC_SUPABASE_URL
 ARG NEXT_PUBLIC_SUPABASE_ANON_KEY
+ARG NEXTAUTH_URL # <-- ADD THIS
 
 # Expose them as environment variables to the 'npm run build' command
 ENV NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL
 ENV NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY
-# ---- END OF FIX ----
+ENV NEXTAUTH_URL=$NEXTAUTH_URL # <-- ADD THIS
 
 RUN npm run build
+
+# (rest of the file)
 
 EXPOSE 3000
 
