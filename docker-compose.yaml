@@ -80,6 +80,7 @@ services:
       args:
         - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
         - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+        - NEXTAUTH_URL=${NEXTAUTH_URL}
     ports:
       - "3000:3000"
     # NOTE: .env.local volume is removed. Coolify injects secrets from the UI.
