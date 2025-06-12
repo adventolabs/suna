@@ -34,10 +34,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend/.env:/app/.env:ro
-    env_file:
-      - ./backend/.env
+    # NOTE: env_file and .env volumes are removed. Coolify injects secrets from the UI.
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -58,10 +55,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     command: python -m dramatiq run_agent_background
-    volumes:
-      - ./backend/.env:/app/.env:ro
-    env_file:
-      - ./backend/.env
+    # NOTE: env_file and .env volumes are removed. Coolify injects secrets from the UI.
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -80,10 +74,15 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      # --- THIS IS THE FIX ---
+      # This 'args' block passes the variables set in the Coolify UI
+      # to the Docker build process for the frontend service.
+      args:
+        - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+        - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend/.env.local:/app/.env.local:ro
+    # NOTE: .env.local volume is removed. Coolify injects secrets from the UI.
     environment:
       - NODE_ENV=production
     command: ["npm", "run", "start"]
