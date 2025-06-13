@@ -47,7 +47,7 @@ class Configuration:
     STRIPE_TIER_25_200_ID_PROD: str = 'price_1RILb4G6l1KZGqIrGAD8rNjb'
     STRIPE_TIER_50_400_ID_PROD: str = 'price_1RILb4G6l1KZGqIruNBUMTF1'
     STRIPE_TIER_125_800_ID_PROD: str = 'price_1RILb3G6l1KZGqIrbJA766tN'
-    STRIPE_TIER_200_1000_ID_PROD: str = 'prod_SUL60IHaeTUQeY'
+    STRIPE_TIER_200_1000_ID_PROD: str = 'price_1RZMPwHIKuYVn5mDSO7z2Pn5'
     
     # Subscription tier IDs - Staging
     STRIPE_FREE_TIER_ID_STAGING: str = 'price_1RIGvuG6l1KZGqIrw14abxeL'
@@ -57,7 +57,7 @@ class Configuration:
     STRIPE_TIER_25_200_ID_STAGING: str = 'price_1RIGvuG6l1KZGqIrOVLKlOMj'
     STRIPE_TIER_50_400_ID_STAGING: str = 'price_1RIKNgG6l1KZGqIrvsat5PW7'
     STRIPE_TIER_125_800_ID_STAGING: str = 'price_1RIKNrG6l1KZGqIrjKT0yGvI'
-    STRIPE_TIER_200_1000_ID_STAGING: str = 'prod_SUL60IHaeTUQeY'
+    STRIPE_TIER_200_1000_ID_STAGING: str = 'price_1RZMPwHIKuYVn5mDSO7z2Pn5'
     
     # Computed subscription tier IDs based on environment
     @property
