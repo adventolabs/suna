@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Kortix Suna',
-  url: 'https://suna.so/',
+  url: 'https://chat.advento.co.za',
   description: 'Kortix AI',
   links: {
     twitter: 'https://x.com/kortixai',
