@@ -114,7 +114,7 @@ class Configuration:
     GROQ_API_KEY: Optional[str] = None
     OPENROUTER_API_KEY: Optional[str] = None
     OPENROUTER_API_BASE: Optional[str] = "https://openrouter.ai/api/v1"
-    OR_SITE_URL: Optional[str] = "https://kortix.ai"
+    OR_SITE_URL: Optional[str] = "https://chat.advento.co.za"
     OR_APP_NAME: Optional[str] = "Kortix AI"    
     
     # AWS Bedrock credentials
