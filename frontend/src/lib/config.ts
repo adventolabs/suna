@@ -61,7 +61,7 @@ const PROD_TIERS: SubscriptionTiers = {
     name: '125h/$800',
   },
   TIER_200_1000: {
-    priceId: 'prod_SUL60IHaeTUQeY',
+    priceId: 'price_1RZMPwHIKuYVn5mDSO7z2Pn5',
     name: '200h/$1000',
   },
 } as const;
@@ -97,7 +97,7 @@ const STAGING_TIERS: SubscriptionTiers = {
     name: '125h/$800',
   },
   TIER_200_1000: {
-    priceId: 'prod_SUL60IHaeTUQeY',
+    priceId: 'price_1RZMPwHIKuYVn5mDSO7z2Pn5',
     name: '200h/$1000',
   },
 } as const;
